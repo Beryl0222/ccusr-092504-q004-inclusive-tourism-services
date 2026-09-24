@@ -1,0 +1,8 @@
+[project]
+name = "inclusive-tourism-services"
+version = "0.1.0"
+description = "普惠旅游公共服务账本领域契约"
+requires-python = ">=3.11"
+
+[tool.unittest]
+start-directory = "tests"
