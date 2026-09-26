@@ -19,11 +19,25 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "POLICY_VERSIONED",
         "SERVICE_COMMITTED",
+        "FACILITY_REGISTERED",
         "CAPACITY_REPORTED",
+        "BOOKING_RECORDED",
+        "CONTRACT_SIGNED",
+        "EVIDENCE_SUBMITTED",
         "BENEFIT_GRANTED",
+        "BENEFIT_REDEEMED",
         "OUTAGE_DECLARED",
-        "PERFORMANCE_FROZEN"
+        "ALTERNATIVE_ARRANGED",
+        "OUTAGE_RESOLVED",
+        "TRANSPORT_LINKED",
+        "USAGE_AGGREGATED",
+        "FEEDBACK_COLLECTED",
+        "FUNDS_ALLOCATED",
+        "SUBSIDY_PAID",
+        "PERFORMANCE_FROZEN",
+        "DECISION_MADE"
       ]
     },
     "aggregate_type": {
@@ -31,7 +45,13 @@
       "enum": [
         "service_policy",
         "public_facility",
+        "operation_contract",
         "benefit_entitlement",
+        "outage_record",
+        "transport_link",
+        "usage_observation",
+        "feedback_record",
+        "fund_account",
         "performance_period"
       ]
     },
@@ -50,6 +70,9 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "details": {
+      "type": "object"
     }
   },
   "additionalProperties": true

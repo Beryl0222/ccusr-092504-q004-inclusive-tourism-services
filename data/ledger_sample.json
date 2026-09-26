@@ -1,0 +1,406 @@
+[
+  {
+    "event_id": "evt-2026-001",
+    "event_type": "POLICY_VERSIONED",
+    "aggregate_type": "service_policy",
+    "aggregate_id": "policy-2026",
+    "occurred_at": "2026-01-05T09:00:00+08:00",
+    "version": 1,
+    "summary": "发布2026版普惠旅游公共服务清单",
+    "details": {
+      "period_id": "2026Q3",
+      "service_radius_km": 3,
+      "public_list": ["visitor-center-01", "accessible-shuttle-01"]
+    }
+  },
+  {
+    "event_id": "evt-2026-002",
+    "event_type": "FACILITY_REGISTERED",
+    "aggregate_type": "public_facility",
+    "aggregate_id": "visitor-center-01",
+    "occurred_at": "2026-02-10T10:00:00+08:00",
+    "version": 1,
+    "summary": "登记滨江游客中心",
+    "details": {"period_id": "2026Q3", "capacity_total": 500, "opened_at": "2026-03-01"}
+  },
+  {
+    "event_id": "evt-2026-003",
+    "event_type": "FACILITY_REGISTERED",
+    "aggregate_type": "public_facility",
+    "aggregate_id": "accessible-shuttle-01",
+    "occurred_at": "2026-02-10T10:05:00+08:00",
+    "version": 1,
+    "summary": "登记无障碍接驳线一号线",
+    "details": {"period_id": "2026Q3", "capacity_total": 40, "opened_at": "2026-03-01"}
+  },
+  {
+    "event_id": "evt-2026-004",
+    "event_type": "SERVICE_COMMITTED",
+    "aggregate_type": "service_policy",
+    "aggregate_id": "policy-2026",
+    "occurred_at": "2026-02-20T09:30:00+08:00",
+    "version": 2,
+    "summary": "承诺无障碍接驳兜底服务",
+    "details": {
+      "period_id": "2026Q3",
+      "facility_id": "accessible-shuttle-01",
+      "safety_net": true,
+      "priority_group": "mobility_impaired",
+      "open_hours": "07:00-19:00"
+    }
+  },
+  {
+    "event_id": "evt-2026-005",
+    "event_type": "SERVICE_COMMITTED",
+    "aggregate_type": "service_policy",
+    "aggregate_id": "policy-2026",
+    "occurred_at": "2026-02-20T09:35:00+08:00",
+    "version": 3,
+    "summary": "承诺游客中心公益休憩区",
+    "details": {
+      "period_id": "2026Q3",
+      "facility_id": "visitor-center-01",
+      "safety_net": false,
+      "open_hours": "08:30-21:00"
+    }
+  },
+  {
+    "event_id": "evt-2026-006",
+    "event_type": "CONTRACT_SIGNED",
+    "aggregate_type": "operation_contract",
+    "aggregate_id": "contract-01",
+    "occurred_at": "2026-02-25T14:00:00+08:00",
+    "version": 1,
+    "summary": "与城旅运营公司签订购买服务合同",
+    "details": {
+      "period_id": "2026Q3",
+      "operator_id": "op-citytour",
+      "facility_ids": ["visitor-center-01", "accessible-shuttle-01"],
+      "service_ids": ["shuttle-line-a", "shuttle-line-b", "center-rest-area"]
+    }
+  },
+  {
+    "event_id": "evt-2026-007",
+    "event_type": "CAPACITY_REPORTED",
+    "aggregate_type": "public_facility",
+    "aggregate_id": "visitor-center-01",
+    "occurred_at": "2026-07-31T18:00:00+08:00",
+    "version": 2,
+    "summary": "游客中心7月容量台账",
+    "details": {
+      "period_id": "2026Q3",
+      "total": 500,
+      "public_reserved": 200,
+      "public_used": 150,
+      "commercial_accepted": 300
+    }
+  },
+  {
+    "event_id": "evt-2026-008",
+    "event_type": "CAPACITY_REPORTED",
+    "aggregate_type": "public_facility",
+    "aggregate_id": "accessible-shuttle-01",
+    "occurred_at": "2026-07-31T18:05:00+08:00",
+    "version": 2,
+    "summary": "接驳线7月容量台账",
+    "details": {
+      "period_id": "2026Q3",
+      "total": 40,
+      "public_reserved": 40,
+      "public_used": 12,
+      "commercial_accepted": 0
+    }
+  },
+  {
+    "event_id": "evt-2026-009",
+    "event_type": "BENEFIT_GRANTED",
+    "aggregate_type": "benefit_entitlement",
+    "aggregate_id": "ent-voucher-01",
+    "occurred_at": "2026-06-01T00:00:00+08:00",
+    "version": 1,
+    "summary": "发放低收入居民文旅消费券",
+    "details": {
+      "period_id": "2026Q3",
+      "entitlement_id": "ent-voucher-01",
+      "beneficiary_ref": "cohort-low-income-2026",
+      "kind": "voucher",
+      "eligible_qualification": "resident_low_income",
+      "effective_from": "2026-06-01",
+      "effective_to": "2026-09-30",
+      "channel": "mini_program"
+    }
+  },
+  {
+    "event_id": "evt-2026-010",
+    "event_type": "BENEFIT_REDEEMED",
+    "aggregate_type": "benefit_entitlement",
+    "aggregate_id": "ent-voucher-01",
+    "occurred_at": "2026-07-12T11:20:00+08:00",
+    "version": 2,
+    "summary": "小程序核销消费券",
+    "details": {
+      "period_id": "2026Q3",
+      "entitlement_id": "ent-voucher-01",
+      "beneficiary_ref": "cohort-low-income-2026",
+      "kind": "voucher",
+      "qualification": "resident_low_income",
+      "channel": "mini_program",
+      "service_id": "center-rest-area",
+      "redeemed_at": "2026-07-12"
+    }
+  },
+  {
+    "event_id": "evt-2026-011",
+    "event_type": "OUTAGE_DECLARED",
+    "aggregate_type": "outage_record",
+    "aggregate_id": "outage-01",
+    "occurred_at": "2026-08-03T07:40:00+08:00",
+    "version": 1,
+    "summary": "接驳A线车辆故障暂停",
+    "details": {
+      "period_id": "2026Q3",
+      "facility_id": "accessible-shuttle-01",
+      "affected_service_ids": ["shuttle-line-a"],
+      "all_service_ids": ["shuttle-line-a", "shuttle-line-b"],
+      "reason": "vehicle_failure"
+    }
+  },
+  {
+    "event_id": "evt-2026-012",
+    "event_type": "ALTERNATIVE_ARRANGED",
+    "aggregate_type": "outage_record",
+    "aggregate_id": "outage-01",
+    "occurred_at": "2026-08-03T08:10:00+08:00",
+    "version": 2,
+    "summary": "B线加班次替代A线兜底",
+    "details": {
+      "period_id": "2026Q3",
+      "outage_id": "outage-01",
+      "alternative_service_id": "shuttle-line-b"
+    }
+  },
+  {
+    "event_id": "evt-2026-013",
+    "event_type": "OUTAGE_RESOLVED",
+    "aggregate_type": "outage_record",
+    "aggregate_id": "outage-01",
+    "occurred_at": "2026-08-05T16:00:00+08:00",
+    "version": 3,
+    "summary": "A线恢复运营",
+    "details": {
+      "period_id": "2026Q3",
+      "outage_id": "outage-01",
+      "resumed_service_ids": ["shuttle-line-a"]
+    }
+  },
+  {
+    "event_id": "evt-2026-014",
+    "event_type": "SUBSIDY_PAID",
+    "aggregate_type": "fund_account",
+    "aggregate_id": "acct-purchase-2026",
+    "occurred_at": "2026-08-10T10:00:00+08:00",
+    "version": 2,
+    "summary": "拨付A线故障应急替代补贴",
+    "details": {
+      "period_id": "2026Q3",
+      "source": "purchase_of_service",
+      "amount": 1200000,
+      "outage_id": "outage-01",
+      "service_id": "shuttle-line-a",
+      "journey_stage": "到达",
+      "beneficiary_groups": ["mobility_impaired", "elderly"]
+    }
+  },
+  {
+    "event_id": "evt-2026-015",
+    "event_type": "TRANSPORT_LINKED",
+    "aggregate_type": "transport_link",
+    "aggregate_id": "link-metro-shuttle",
+    "occurred_at": "2026-03-01T09:00:00+08:00",
+    "version": 1,
+    "summary": "地铁2号线换乘接驳线直达景区",
+    "details": {
+      "period_id": "2026Q3",
+      "from_hub": "metro-line-2",
+      "to_facility": "accessible-shuttle-01",
+      "accessible": true
+    }
+  },
+  {
+    "event_id": "evt-2026-016",
+    "event_type": "USAGE_AGGREGATED",
+    "aggregate_type": "usage_observation",
+    "aggregate_id": "usage-center-peak",
+    "occurred_at": "2026-08-31T23:00:00+08:00",
+    "version": 1,
+    "summary": "游客中心旺季使用聚合",
+    "details": {
+      "period_id": "2026Q3",
+      "facility_id": "visitor-center-01",
+      "season": "peak",
+      "total_count": 900,
+      "resident_share": 0.35,
+      "resident_share_baseline": 0.6,
+      "metrics": {"coverage": 0.9, "fairness": 0.55, "accessibility": 0.7, "quality": 0.85},
+      "group_buckets": [
+        {"group": "residents", "count": 320},
+        {"group": "tourists", "count": 580}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-2026-017",
+    "event_type": "USAGE_AGGREGATED",
+    "aggregate_type": "usage_observation",
+    "aggregate_id": "usage-center-off",
+    "occurred_at": "2026-09-20T23:00:00+08:00",
+    "version": 1,
+    "summary": "游客中心淡季使用聚合",
+    "details": {
+      "period_id": "2026Q3",
+      "facility_id": "visitor-center-01",
+      "season": "off",
+      "total_count": 500,
+      "resident_share": 0.4,
+      "resident_share_baseline": 0.6,
+      "metrics": {"coverage": 0.88, "fairness": 0.6, "accessibility": 0.7, "quality": 0.83},
+      "group_buckets": [
+        {"group": "residents", "count": 200},
+        {"group": "tourists", "count": 300}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-2026-018",
+    "event_type": "USAGE_AGGREGATED",
+    "aggregate_type": "usage_observation",
+    "aggregate_id": "usage-shuttle-peak",
+    "occurred_at": "2026-08-31T23:05:00+08:00",
+    "version": 1,
+    "summary": "接驳线旺季使用聚合",
+    "details": {
+      "period_id": "2026Q3",
+      "facility_id": "accessible-shuttle-01",
+      "season": "peak",
+      "total_count": 900,
+      "metrics": {"coverage": 0.75, "fairness": 0.85, "accessibility": 0.95, "quality": 0.8},
+      "group_buckets": [
+        {"group": "mobility_impaired", "count": 260},
+        {"group": "elderly", "count": 340},
+        {"group": "general", "count": 300}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-2026-019",
+    "event_type": "USAGE_AGGREGATED",
+    "aggregate_type": "usage_observation",
+    "aggregate_id": "usage-shuttle-off",
+    "occurred_at": "2026-09-20T23:05:00+08:00",
+    "version": 1,
+    "summary": "接驳线淡季使用聚合",
+    "details": {
+      "period_id": "2026Q3",
+      "facility_id": "accessible-shuttle-01",
+      "season": "off",
+      "total_count": 120,
+      "metrics": {"coverage": 0.75, "fairness": 0.88, "accessibility": 0.95, "quality": 0.82},
+      "group_buckets": [
+        {"group": "mobility_impaired", "count": 60},
+        {"group": "elderly", "count": 60}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-2026-020",
+    "event_type": "FEEDBACK_COLLECTED",
+    "aggregate_type": "feedback_record",
+    "aggregate_id": "feedback-q3",
+    "occurred_at": "2026-09-22T12:00:00+08:00",
+    "version": 1,
+    "summary": "三季度居民与游客反馈聚合",
+    "details": {
+      "period_id": "2026Q3",
+      "facility_id": "visitor-center-01",
+      "group_buckets": [
+        {"group": "resident_rest_space_complaint", "count": 46},
+        {"group": "tourist_service_praise", "count": 128}
+      ]
+    }
+  },
+  {
+    "event_id": "evt-2026-021",
+    "event_type": "FUNDS_ALLOCATED",
+    "aggregate_type": "fund_account",
+    "aggregate_id": "acct-fiscal-2026",
+    "occurred_at": "2026-01-10T09:00:00+08:00",
+    "version": 1,
+    "summary": "财政专项资金到位",
+    "details": {"period_id": "2026Q3", "source": "fiscal", "amount": 500000000}
+  },
+  {
+    "event_id": "evt-2026-022",
+    "event_type": "FUNDS_ALLOCATED",
+    "aggregate_type": "fund_account",
+    "aggregate_id": "acct-purchase-2026",
+    "occurred_at": "2026-01-10T09:05:00+08:00",
+    "version": 1,
+    "summary": "购买服务预算到位",
+    "details": {"period_id": "2026Q3", "source": "purchase_of_service", "amount": 200000000}
+  },
+  {
+    "event_id": "evt-2026-023",
+    "event_type": "FUNDS_ALLOCATED",
+    "aggregate_type": "fund_account",
+    "aggregate_id": "acct-operating-2026",
+    "occurred_at": "2026-09-01T09:00:00+08:00",
+    "version": 1,
+    "summary": "经营收入入账",
+    "details": {"period_id": "2026Q3", "source": "operating_revenue", "amount": 80000000}
+  },
+  {
+    "event_id": "evt-2026-024",
+    "event_type": "EVIDENCE_SUBMITTED",
+    "aggregate_type": "operation_contract",
+    "aggregate_id": "contract-01",
+    "occurred_at": "2026-09-23T15:00:00+08:00",
+    "version": 2,
+    "summary": "运营方提交接驳线履约证据",
+    "details": {
+      "period_id": "2026Q3",
+      "operator_id": "op-citytour",
+      "facility_id": "accessible-shuttle-01",
+      "service_id": "shuttle-line-a",
+      "evidence_ref": "ev-2026q3-shuttle"
+    }
+  },
+  {
+    "event_id": "evt-2026-025",
+    "event_type": "PERFORMANCE_FROZEN",
+    "aggregate_type": "performance_period",
+    "aggregate_id": "2026Q3",
+    "occurred_at": "2026-09-24T12:00:00+08:00",
+    "version": 1,
+    "summary": "评价人员冻结三季度账本数据版本",
+    "details": {
+      "period_id": "2026Q3",
+      "data_digest": "fdc699a3c6cfa1f74630f157ab98bd49a3aea5a80a4d03429b7e7dd1ca6bfa1d",
+      "reviewer_ids": ["reviewer-lin", "reviewer-zhao"]
+    }
+  },
+  {
+    "event_id": "evt-2026-026",
+    "event_type": "DECISION_MADE",
+    "aggregate_type": "performance_period",
+    "aggregate_id": "2026Q3",
+    "occurred_at": "2026-09-25T10:00:00+08:00",
+    "version": 2,
+    "summary": "综合覆盖、公平、可达、质量与淡旺季使用作出续拨调整决定",
+    "details": {
+      "period_id": "2026Q3",
+      "based_on_digest": "fdc699a3c6cfa1f74630f157ab98bd49a3aea5a80a4d03429b7e7dd1ca6bfa1d",
+      "decider_id": "reviewer-lin",
+      "interested_party_ids": ["op-citytour", "scenic-area-co"]
+    }
+  }
+]
