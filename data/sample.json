@@ -5,5 +5,14 @@
   "aggregate_id": "inclusive_tourism_services-001",
   "occurred_at": "2026-09-24T12:00:00+08:00",
   "version": 1,
-  "summary": "已登记一条可供联调的领域事实"
+  "summary": "已登记一条可供联调的领域事实",
+  "event_payload": {
+    "policy_code": "P-SAMPLE",
+    "service_code": "SVC-SAMPLE-001",
+    "service_name": "联调用示例服务",
+    "public_benefit_listed": true,
+    "service_radius_km": 1.0,
+    "opening_schedule": "示例开放承诺",
+    "operator_id": "OP-SAMPLE"
+  }
 }

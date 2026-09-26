@@ -1,0 +1,705 @@
+[
+  {
+    "event_id": "2026-0001",
+    "event_type": "POLICY_PUBLISHED",
+    "aggregate_type": "service_policy",
+    "aggregate_id": "policy-P-INCL",
+    "occurred_at": "2026-01-01T09:00:00+08:00",
+    "version": 1,
+    "summary": "发布《普惠旅游公共服务清单管理办法》第1版",
+    "event_payload": {
+      "policy_code": "P-INCL",
+      "policy_version": 1,
+      "effective_from": "2026-01-01",
+      "issuer": "市县文化和旅游局"
+    }
+  },
+  {
+    "event_id": "2026-0002",
+    "event_type": "POLICY_VERSIONED",
+    "aggregate_type": "service_policy",
+    "aggregate_id": "policy-P-INCL",
+    "occurred_at": "2026-05-20T10:00:00+08:00",
+    "version": 2,
+    "summary": "清单办法修订：公益配额不得被商业预约挤占，淡季兜底服务保留",
+    "event_payload": {
+      "policy_code": "P-INCL",
+      "policy_version": 2,
+      "supersedes_version": 1,
+      "effective_from": "2026-06-01"
+    }
+  },
+  {
+    "event_id": "2026-0003",
+    "event_type": "SERVICE_COMMITTED",
+    "aggregate_type": "service_policy",
+    "aggregate_id": "service-SVC-VC-01",
+    "occurred_at": "2026-01-05T09:30:00+08:00",
+    "version": 1,
+    "summary": "城东新游客中心列入公益清单并作出开放承诺，原址含居民休憩空间",
+    "event_payload": {
+      "policy_code": "P-INCL",
+      "service_code": "SVC-VC-01",
+      "service_name": "城东游客中心",
+      "public_benefit_listed": true,
+      "service_radius_km": 3.0,
+      "opening_schedule": "每日 08:00-20:00，公益休憩区与母婴/无障碍设施免费开放",
+      "operator_id": "OP-HUASHAN",
+      "resident_space_displaced": true
+    }
+  },
+  {
+    "event_id": "2026-0004",
+    "event_type": "SERVICE_COMMITTED",
+    "aggregate_type": "service_policy",
+    "aggregate_id": "service-SVC-SHUTTLE-B1",
+    "occurred_at": "2026-01-05T09:35:00+08:00",
+    "version": 1,
+    "summary": "景区至社区医院的无障碍接驳线列入公益清单，承诺淡季不停运",
+    "event_payload": {
+      "policy_code": "P-INCL",
+      "service_code": "SVC-SHUTTLE-B1",
+      "service_name": "景区—社区医院无障碍接驳线",
+      "public_benefit_listed": true,
+      "service_radius_km": 8.5,
+      "opening_schedule": "全年运营，旺季每30分钟一班、淡季每60分钟一班",
+      "operator_id": "OP-JIAOTOU"
+    }
+  },
+  {
+    "event_id": "2026-0005",
+    "event_type": "CONTRACT_AWARDED",
+    "aggregate_type": "operating_contract",
+    "aggregate_id": "contract-C-HS-2026",
+    "occurred_at": "2026-01-10T14:00:00+08:00",
+    "version": 1,
+    "summary": "政府购买服务：华晟文旅承接游客中心运维",
+    "event_payload": {
+      "contract_id": "C-HS-2026",
+      "operator_id": "OP-HUASHAN",
+      "service_codes": ["SVC-VC-01"],
+      "period_start": "2026-01-01",
+      "period_end": "2026-12-31",
+      "purchase_amount": 480000
+    }
+  },
+  {
+    "event_id": "2026-0006",
+    "event_type": "CONTRACT_AWARDED",
+    "aggregate_type": "operating_contract",
+    "aggregate_id": "contract-C-JT-2026",
+    "occurred_at": "2026-01-10T14:10:00+08:00",
+    "version": 1,
+    "summary": "政府购买服务：市交投承接无障碍接驳线",
+    "event_payload": {
+      "contract_id": "C-JT-2026",
+      "operator_id": "OP-JIAOTOU",
+      "service_codes": ["SVC-SHUTTLE-B1"],
+      "period_start": "2026-01-01",
+      "period_end": "2026-12-31",
+      "purchase_amount": 360000
+    }
+  },
+  {
+    "event_id": "2026-0007",
+    "event_type": "CAPACITY_REPORTED",
+    "aggregate_type": "public_facility",
+    "aggregate_id": "facility-FAC-VC-01",
+    "occurred_at": "2026-08-31T18:00:00+08:00",
+    "version": 3,
+    "summary": "游客中心旺季月度容量上报：商业预约超出商业配额，挤占公益容量",
+    "event_payload": {
+      "facility_id": "FAC-VC-01",
+      "total_capacity": 2000,
+      "public_quota": 1200,
+      "commercial_quota": 800,
+      "commercial_bookings": 920,
+      "as_of": "2026-08-31"
+    }
+  },
+  {
+    "event_id": "2026-0008",
+    "event_type": "MAINTENANCE_LOGGED",
+    "aggregate_type": "public_facility",
+    "aggregate_id": "facility-FAC-VC-01",
+    "occurred_at": "2026-09-02T09:00:00+08:00",
+    "version": 1,
+    "summary": "游客中心无障碍坡道整修逾期未完成，记入待维护短板",
+    "event_payload": {
+      "maintenance_id": "MT-VC-009",
+      "facility_id": "FAC-VC-01",
+      "service_codes": ["SVC-VC-01"],
+      "work_kind": "无障碍坡道与扶手整修",
+      "scheduled_on": "2026-08-20",
+      "status": "overdue"
+    }
+  },
+  {
+    "event_id": "2026-0009",
+    "event_type": "LINK_OPENED",
+    "aggregate_type": "transit_link",
+    "aggregate_id": "link-LINK-VC-BUS",
+    "occurred_at": "2026-01-15T08:00:00+08:00",
+    "version": 1,
+    "summary": "游客中心衔接常规公交12路",
+    "event_payload": {
+      "link_id": "LINK-VC-BUS",
+      "mode": "常规公交",
+      "service_codes": ["SVC-VC-01"],
+      "accessible": false,
+      "headway_minutes": 15,
+      "season": "all"
+    }
+  },
+  {
+    "event_id": "2026-0010",
+    "event_type": "LINK_OPENED",
+    "aggregate_type": "transit_link",
+    "aggregate_id": "link-LINK-B1",
+    "occurred_at": "2026-01-15T08:10:00+08:00",
+    "version": 1,
+    "summary": "无障碍接驳线B1全线低地板车辆并配轮椅位",
+    "event_payload": {
+      "link_id": "LINK-B1",
+      "mode": "无障碍接驳巴士",
+      "service_codes": ["SVC-SHUTTLE-B1"],
+      "accessible": true,
+      "headway_minutes": 60,
+      "season": "all"
+    }
+  },
+  {
+    "event_id": "2026-0011",
+    "event_type": "LINK_OPENED",
+    "aggregate_type": "transit_link",
+    "aggregate_id": "link-LINK-B1-TAXI",
+    "occurred_at": "2026-08-12T11:30:00+08:00",
+    "version": 1,
+    "summary": "B1车辆故障期间启用预约制无障碍出租车作为替代衔接",
+    "event_payload": {
+      "link_id": "LINK-B1-TAXI",
+      "mode": "无障碍预约出租车",
+      "service_codes": ["SVC-SHUTTLE-B1"],
+      "accessible": true,
+      "headway_minutes": 30,
+      "season": "all"
+    }
+  },
+  {
+    "event_id": "2026-0012",
+    "event_type": "BENEFIT_GRANTED",
+    "aggregate_type": "benefit_entitlement",
+    "aggregate_id": "benefit-BEN-VCH-01",
+    "occurred_at": "2026-06-25T12:00:00+08:00",
+    "version": 1,
+    "summary": "发放暑期文旅消费券，线上领券、线上线下均可核验",
+    "event_payload": {
+      "benefit_code": "BEN-VCH-01",
+      "benefit_kind": "voucher",
+      "channel": "online",
+      "channels": ["online", "offline_window"],
+      "qualification_rule": {"eligible_group": "所有来县游客", "per_person_limit": 1},
+      "effective_from": "2026-07-01",
+      "effective_to": "2026-10-31",
+      "budget_source": "fiscal"
+    }
+  },
+  {
+    "event_id": "2026-0013",
+    "event_type": "BENEFIT_GRANTED",
+    "aggregate_type": "benefit_entitlement",
+    "aggregate_id": "benefit-BEN-WAIVE-01",
+    "occurred_at": "2026-01-01T09:00:00+08:00",
+    "version": 1,
+    "summary": "重点群体免票减免：残障人士、65岁以上老人、现役军人",
+    "event_payload": {
+      "benefit_code": "BEN-WAIVE-01",
+      "benefit_kind": "fee_waiver",
+      "channel": "offline_window",
+      "channels": ["offline_window", "online"],
+      "qualification_rule": {"eligible_group": "残障人士/65岁以上老人/现役军人", "proof_required": true},
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-12-31",
+      "budget_source": "fiscal"
+    }
+  },
+  {
+    "event_id": "2026-0014",
+    "event_type": "BENEFIT_REDEEMED",
+    "aggregate_type": "benefit_entitlement",
+    "aggregate_id": "benefit-BEN-VCH-01",
+    "occurred_at": "2026-08-02T10:12:00+08:00",
+    "version": 1,
+    "summary": "消费券线上核销1笔",
+    "event_payload": {
+      "benefit_code": "BEN-VCH-01",
+      "redemption_id": "RD-774001",
+      "channel": "online",
+      "qualification_met": true,
+      "occurred_on": "2026-08-02",
+      "service_code": "SVC-VC-01",
+      "dedup_key": "ben-vch-01|2026-08|cell-7741"
+    }
+  },
+  {
+    "event_id": "2026-0015",
+    "event_type": "BENEFIT_REDEEMED",
+    "aggregate_type": "benefit_entitlement",
+    "aggregate_id": "benefit-BEN-VCH-01",
+    "occurred_at": "2026-08-03T15:20:00+08:00",
+    "version": 1,
+    "summary": "同一受益单元格在窗口重复核销，账本将判为跨渠道重复计算",
+    "event_payload": {
+      "benefit_code": "BEN-VCH-01",
+      "redemption_id": "RD-774088",
+      "channel": "offline_window",
+      "qualification_met": true,
+      "occurred_on": "2026-08-03",
+      "service_code": "SVC-VC-01",
+      "dedup_key": "ben-vch-01|2026-08|cell-7741"
+    }
+  },
+  {
+    "event_id": "2026-0016B",
+    "event_type": "BENEFIT_GRANTED",
+    "aggregate_type": "benefit_entitlement",
+    "aggregate_id": "benefit-BEN-PRIORITY-01",
+    "occurred_at": "2026-01-01T09:05:00+08:00",
+    "version": 1,
+    "summary": "重点群体优先乘车与优先咨询服务",
+    "event_payload": {
+      "benefit_code": "BEN-PRIORITY-01",
+      "benefit_kind": "priority_service",
+      "channel": "offline_window",
+      "channels": ["offline_window", "online"],
+      "qualification_rule": {"eligible_group": "残障人士/65岁以上老人/孕妇/带婴幼儿家庭", "proof_required": false},
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-12-31",
+      "budget_source": "purchase_of_service"
+    }
+  },
+  {
+    "event_id": "2026-0016",
+    "event_type": "BENEFIT_REDEEMED",
+    "aggregate_type": "benefit_entitlement",
+    "aggregate_id": "benefit-BEN-WAIVE-01",
+    "occurred_at": "2026-03-15T09:40:00+08:00",
+    "version": 1,
+    "summary": "重点群体窗口免票减免1笔，资格核验通过",
+    "event_payload": {
+      "benefit_code": "BEN-WAIVE-01",
+      "redemption_id": "RD-551203",
+      "channel": "offline_window",
+      "qualification_met": true,
+      "occurred_on": "2026-03-15",
+      "service_code": "SVC-SHUTTLE-B1",
+      "dedup_key": "ben-waive-01|2026-03|cell-5512"
+    }
+  },
+  {
+    "event_id": "2026-0017",
+    "event_type": "FUNDING_ALLOCATED",
+    "aggregate_type": "funding_ledger",
+    "aggregate_id": "funding-2026-SVC-VC-01",
+    "occurred_at": "2026-01-20T10:00:00+08:00",
+    "version": 1,
+    "summary": "财政资金拨付游客中心公益运维（与购买服务、经营收入分账）",
+    "event_payload": {
+      "funding_id": "F-VC-FISCAL",
+      "fiscal_period": "2026",
+      "source": "fiscal",
+      "amount": 1200000,
+      "service_code": "SVC-VC-01"
+    }
+  },
+  {
+    "event_id": "2026-0018",
+    "event_type": "FUNDING_SETTLED",
+    "aggregate_type": "funding_ledger",
+    "aggregate_id": "funding-2026-SVC-VC-01",
+    "occurred_at": "2026-07-10T10:00:00+08:00",
+    "version": 1,
+    "summary": "游客中心政府购买服务合同款按季度结算",
+    "event_payload": {
+      "funding_id": "F-VC-PURCHASE-H1",
+      "fiscal_period": "2026H1",
+      "source": "purchase_of_service",
+      "amount": 240000,
+      "service_code": "SVC-VC-01",
+      "settled_on": "2026-07-10"
+    }
+  },
+  {
+    "event_id": "2026-0019",
+    "event_type": "FUNDING_SETTLED",
+    "aggregate_type": "funding_ledger",
+    "aggregate_id": "funding-2026-SVC-VC-01",
+    "occurred_at": "2026-10-08T10:00:00+08:00",
+    "version": 1,
+    "summary": "游客中心商铺租金等经营收入上缴入账",
+    "event_payload": {
+      "funding_id": "F-VC-REVENUE-Q3",
+      "fiscal_period": "2026Q3",
+      "source": "operating_revenue",
+      "amount": 360000,
+      "service_code": "SVC-VC-01",
+      "settled_on": "2026-10-08"
+    }
+  },
+  {
+    "event_id": "2026-0020",
+    "event_type": "FUNDING_SETTLED",
+    "aggregate_type": "funding_ledger",
+    "aggregate_id": "funding-2026-SVC-SHUTTLE-B1",
+    "occurred_at": "2026-07-12T10:00:00+08:00",
+    "version": 1,
+    "summary": "接驳线购买服务款按季度结算",
+    "event_payload": {
+      "funding_id": "F-B1-PURCHASE-H1",
+      "fiscal_period": "2026H1",
+      "source": "purchase_of_service",
+      "amount": 180000,
+      "service_code": "SVC-SHUTTLE-B1",
+      "settled_on": "2026-07-12"
+    }
+  },
+  {
+    "event_id": "2026-0021",
+    "event_type": "FUNDING_SETTLED",
+    "aggregate_type": "funding_ledger",
+    "aggregate_id": "funding-2026-SVC-SHUTTLE-B1",
+    "occurred_at": "2026-10-09T10:00:00+08:00",
+    "version": 1,
+    "summary": "接驳线淡季票款等经营收入单独入账",
+    "event_payload": {
+      "funding_id": "F-B1-REVENUE-Q3",
+      "fiscal_period": "2026Q3",
+      "source": "operating_revenue",
+      "amount": 16500,
+      "service_code": "SVC-SHUTTLE-B1",
+      "settled_on": "2026-10-09"
+    }
+  },
+  {
+    "event_id": "2026-0022",
+    "event_type": "OUTAGE_DECLARED",
+    "aggregate_type": "transit_link",
+    "aggregate_id": "link-LINK-B1",
+    "occurred_at": "2026-08-12T11:00:00+08:00",
+    "version": 1,
+    "summary": "B1接驳车底盘故障停运，仅暂停该线，不涉及其它服务",
+    "event_payload": {
+      "outage_id": "OUT-B1-0812",
+      "affected_service_codes": ["SVC-SHUTTLE-B1"],
+      "reason": "车辆底盘故障待件维修",
+      "started_at": "2026-08-12T11:00:00+08:00",
+      "emergency": false
+    }
+  },
+  {
+    "event_id": "2026-0023",
+    "event_type": "ALTERNATIVE_ARRANGED",
+    "aggregate_type": "transit_link",
+    "aggregate_id": "link-LINK-B1",
+    "occurred_at": "2026-08-12T11:35:00+08:00",
+    "version": 1,
+    "summary": "同步启用无障碍预约出租车兜底，重点群体出行不中断",
+    "event_payload": {
+      "outage_id": "OUT-B1-0812",
+      "affected_service_codes": ["SVC-SHUTTLE-B1"],
+      "replacement_link_id": "LINK-B1-TAXI",
+      "started_at": "2026-08-12T11:30:00+08:00"
+    }
+  },
+  {
+    "event_id": "2026-0024",
+    "event_type": "FUNDING_SETTLED",
+    "aggregate_type": "funding_ledger",
+    "aggregate_id": "funding-2026-SVC-SHUTTLE-B1",
+    "occurred_at": "2026-08-14T16:00:00+08:00",
+    "version": 1,
+    "summary": "停运期间替代运输成本补偿一次性结算（停用未恢复期间）",
+    "event_payload": {
+      "funding_id": "F-B1-OUT-0812",
+      "fiscal_period": "2026Q3",
+      "source": "purchase_of_service",
+      "amount": 12000,
+      "service_code": "SVC-SHUTTLE-B1",
+      "settled_on": "2026-08-14",
+      "outage_id": "OUT-B1-0812"
+    }
+  },
+  {
+    "event_id": "2026-0025",
+    "event_type": "SERVICE_RESUMED",
+    "aggregate_type": "transit_link",
+    "aggregate_id": "link-LINK-B1",
+    "occurred_at": "2026-08-16T08:00:00+08:00",
+    "version": 1,
+    "summary": "车辆修复，B1接驳线恢复运营，替代出租车同步退出",
+    "event_payload": {
+      "outage_id": "OUT-B1-0812",
+      "resumed_at": "2026-08-16T08:00:00+08:00",
+      "restored_service_codes": ["SVC-SHUTTLE-B1"]
+    }
+  },
+  {
+    "event_id": "2026-0025-ALT-EXIT",
+    "event_type": "LINK_CHANGED",
+    "aggregate_type": "transit_link",
+    "aggregate_id": "link-LINK-B1-TAXI",
+    "occurred_at": "2026-08-16T08:05:00+08:00",
+    "version": 1,
+    "summary": "固定线路恢复后，临时替代出租车退出，不作为常态化第二通道",
+    "event_payload": {
+      "link_id": "LINK-B1-TAXI",
+      "change_kind": "suspended",
+      "effective_from": "2026-08-16"
+    }
+  },
+  {
+    "event_id": "2026-0026",
+    "event_type": "EVIDENCE_SUBMITTED",
+    "aggregate_type": "operating_contract",
+    "aggregate_id": "contract-C-HS-2026",
+    "occurred_at": "2026-09-10T17:00:00+08:00",
+    "version": 1,
+    "summary": "华晟文旅仅提交本合同项下游客中心的开放与容量履约证据",
+    "event_payload": {
+      "contract_id": "C-HS-2026",
+      "operator_id": "OP-HUASHAN",
+      "service_codes": ["SVC-VC-01"],
+      "evidence_ids": ["EV-VC-OPEN-LOG", "EV-VC-CAPACITY-0831"],
+      "submitted_on": "2026-09-10"
+    }
+  },
+  {
+    "event_id": "2026-0027",
+    "event_type": "EVIDENCE_SUBMITTED",
+    "aggregate_type": "operating_contract",
+    "aggregate_id": "contract-C-JT-2026",
+    "occurred_at": "2026-09-10T17:10:00+08:00",
+    "version": 1,
+    "summary": "市交投仅提交本合同项下接驳线的班次与无障碍履约证据",
+    "event_payload": {
+      "contract_id": "C-JT-2026",
+      "operator_id": "OP-JIAOTOU",
+      "service_codes": ["SVC-SHUTTLE-B1"],
+      "evidence_ids": ["EV-B1-HEADWAY-LOG", "EV-B1-ACCESS-AUDIT", "EV-B1-OUT-0812"],
+      "submitted_on": "2026-09-10"
+    }
+  },
+  {
+    "event_id": "2026-0028",
+    "event_type": "USAGE_RECORDED",
+    "aggregate_type": "usage_record",
+    "aggregate_id": "usage-PER-2026-REVIEW-SVC-VC-01-low",
+    "occurred_at": "2026-04-10T09:00:00+08:00",
+    "version": 1,
+    "summary": "游客中心淡季使用（聚合人次，不含个人行踪）",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "service_code": "SVC-VC-01",
+      "season": "low",
+      "resident_visits": 1500,
+      "tourist_visits": 4100,
+      "quota_saturation": 0.30
+    }
+  },
+  {
+    "event_id": "2026-0029",
+    "event_type": "USAGE_RECORDED",
+    "aggregate_type": "usage_record",
+    "aggregate_id": "usage-PER-2026-REVIEW-SVC-VC-01-high",
+    "occurred_at": "2026-09-20T09:00:00+08:00",
+    "version": 1,
+    "summary": "游客中心旺季使用：游客人次高，居民使用占比低",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "service_code": "SVC-VC-01",
+      "season": "high",
+      "resident_visits": 4200,
+      "tourist_visits": 38600,
+      "quota_saturation": 0.95
+    }
+  },
+  {
+    "event_id": "2026-0030",
+    "event_type": "USAGE_RECORDED",
+    "aggregate_type": "usage_record",
+    "aggregate_id": "usage-PER-2026-REVIEW-SVC-SHUTTLE-B1-low",
+    "occurred_at": "2026-04-10T09:05:00+08:00",
+    "version": 1,
+    "summary": "接驳线淡季使用：饱和度低，但居民就医出行依赖明显",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "service_code": "SVC-SHUTTLE-B1",
+      "season": "low",
+      "resident_visits": 1480,
+      "tourist_visits": 320,
+      "quota_saturation": 0.11
+    }
+  },
+  {
+    "event_id": "2026-0031",
+    "event_type": "USAGE_RECORDED",
+    "aggregate_type": "usage_record",
+    "aggregate_id": "usage-PER-2026-REVIEW-SVC-SHUTTLE-B1-high",
+    "occurred_at": "2026-09-20T09:05:00+08:00",
+    "version": 1,
+    "summary": "接驳线旺季使用",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "service_code": "SVC-SHUTTLE-B1",
+      "season": "high",
+      "resident_visits": 1900,
+      "tourist_visits": 6200,
+      "quota_saturation": 0.34
+    }
+  },
+  {
+    "event_id": "2026-0032",
+    "event_type": "FEEDBACK_COLLECTED",
+    "aggregate_type": "feedback_record",
+    "aggregate_id": "feedback-PER-2026-REVIEW-SVC-VC-01-resident",
+    "occurred_at": "2026-09-21T09:00:00+08:00",
+    "version": 1,
+    "summary": "居民反馈：休憩空间被商业展陈挤占（47人聚合单元格）",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "service_code": "SVC-VC-01",
+      "group": "周边居民",
+      "satisfaction": 0.52,
+      "concern": "居民休憩空间被挤占，晚间可坐区域减少",
+      "cell_count": 47
+    }
+  },
+  {
+    "event_id": "2026-0033",
+    "event_type": "FEEDBACK_COLLECTED",
+    "aggregate_type": "feedback_record",
+    "aggregate_id": "feedback-PER-2026-REVIEW-SVC-VC-01-tourist",
+    "occurred_at": "2026-09-21T09:05:00+08:00",
+    "version": 1,
+    "summary": "游客反馈：高峰拥挤但整体满意（213人聚合单元格）",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "service_code": "SVC-VC-01",
+      "group": "游客",
+      "satisfaction": 0.88,
+      "concern": "旺季高峰拥挤、排队时间长",
+      "cell_count": 213
+    }
+  },
+  {
+    "event_id": "2026-0034",
+    "event_type": "FEEDBACK_COLLECTED",
+    "aggregate_type": "feedback_record",
+    "aggregate_id": "feedback-PER-2026-REVIEW-SVC-SHUTTLE-B1-keygroup",
+    "occurred_at": "2026-09-21T09:10:00+08:00",
+    "version": 1,
+    "summary": "重点群体反馈：淡季班次是就医刚需，要求保留（26人聚合单元格）",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "service_code": "SVC-SHUTTLE-B1",
+      "group": "残障人士/老年居民",
+      "satisfaction": 0.95,
+      "concern": "希望淡季保留班次，预约出租车不能完全替代固定线路",
+      "cell_count": 26
+    }
+  },
+  {
+    "event_id": "2026-0035",
+    "event_type": "PERFORMANCE_FROZEN",
+    "aggregate_type": "performance_period",
+    "aggregate_id": "period-PER-2026-REVIEW",
+    "occurred_at": "2026-09-25T18:00:00+08:00",
+    "version": 1,
+    "summary": "评价人员冻结2026复盘期数据版本，此后使用与反馈不可再写入",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "frozen_at": "2026-09-25T18:00:00+08:00",
+      "event_id_range": ["2026-0001", "2026-0034"],
+      "dataset_hash": "sha256:9f2c1a7e4b8d6f30a1c2e5b7d8904f61a3c2e5b7d8904f61a3c2e5b7d8904f61"
+    }
+  },
+  {
+    "event_id": "2026-0036",
+    "event_type": "USAGE_RECORDED",
+    "aggregate_type": "usage_record",
+    "aggregate_id": "usage-PER-2026-REVIEW-SVC-VC-01-late",
+    "occurred_at": "2026-09-26T08:30:00+08:00",
+    "version": 1,
+    "summary": "冻结后补报的使用数据，账本拒收以保证评价基于冻结版本",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "service_code": "SVC-VC-01",
+      "season": "high",
+      "resident_visits": 90,
+      "tourist_visits": 610,
+      "quota_saturation": 0.91
+    }
+  },
+  {
+    "event_id": "2026-0037",
+    "event_type": "REVIEWER_ASSIGNED",
+    "aggregate_type": "performance_period",
+    "aggregate_id": "period-PER-2026-REVIEW",
+    "occurred_at": "2026-09-25T18:10:00+08:00",
+    "version": 1,
+    "summary": "指派两名评价人员并完成利益相关者回避核查",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "reviewer_ids": ["RV-LI", "RV-WANG"],
+      "conflict_check": true
+    }
+  },
+  {
+    "event_id": "2026-0038",
+    "event_type": "REVIEW_DECIDED",
+    "aggregate_type": "review_decision",
+    "aggregate_id": "decision-DEC-2026-VC",
+    "occurred_at": "2026-09-26T10:00:00+08:00",
+    "version": 1,
+    "summary": "游客中心：客流亮眼但公平维度不足，责令限期恢复居民休憩与公益配额",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "decision_id": "DEC-2026-VC",
+      "service_codes": ["SVC-VC-01"],
+      "frozen_dataset_hash": "sha256:9f2c1a7e4b8d6f30a1c2e5b7d8904f61a3c2e5b7d8904f61a3c2e5b7d8904f61",
+      "dimensions": {
+        "coverage": 0.90,
+        "fairness": 0.45,
+        "accessibility": 0.60,
+        "quality": 0.75,
+        "seasonal_use": 0.85
+      },
+      "decision": "rectify",
+      "rationale": "接待人次高但商业预约挤占公益配额、居民休憩空间被占且无障碍坡道待维护，限期整改后再评"
+    }
+  },
+  {
+    "event_id": "2026-0039",
+    "event_type": "REVIEW_DECIDED",
+    "aggregate_type": "review_decision",
+    "aggregate_id": "decision-DEC-2026-B1",
+    "occurred_at": "2026-09-26T10:10:00+08:00",
+    "version": 1,
+    "summary": "无障碍接驳线：淡季低利用但兜底不可替代，决定保留并优化时刻",
+    "event_payload": {
+      "period_id": "PER-2026-REVIEW",
+      "decision_id": "DEC-2026-B1",
+      "service_codes": ["SVC-SHUTTLE-B1"],
+      "frozen_dataset_hash": "sha256:9f2c1a7e4b8d6f30a1c2e5b7d8904f61a3c2e5b7d8904f61a3c2e5b7d8904f61",
+      "dimensions": {
+        "coverage": 0.55,
+        "fairness": 0.90,
+        "accessibility": 0.95,
+        "quality": 0.88,
+        "seasonal_use": 0.40
+      },
+      "decision": "continue",
+      "rationale": "淡季饱和度低但承担残障与老年居民就医兜底，故障期替代安排到位，保留固定线路并按就医时刻优化班次"
+    }
+  }
+]

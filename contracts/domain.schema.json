@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "普惠旅游公共服务账本领域事件",
+  "description": "信封字段对所有事件统一；event_payload 按 event_type 与 aggregate_type 的登记配对校验必填业务字段。",
   "type": "object",
   "required": [
     "event_id",
@@ -9,7 +10,8 @@
     "aggregate_id",
     "occurred_at",
     "version",
-    "summary"
+    "summary",
+    "event_payload"
   ],
   "properties": {
     "event_id": {
@@ -19,11 +21,27 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "POLICY_PUBLISHED",
+        "POLICY_VERSIONED",
         "SERVICE_COMMITTED",
         "CAPACITY_REPORTED",
+        "CONTRACT_AWARDED",
+        "LINK_OPENED",
+        "LINK_CHANGED",
         "BENEFIT_GRANTED",
+        "BENEFIT_REDEEMED",
+        "FUNDING_ALLOCATED",
+        "FUNDING_SETTLED",
         "OUTAGE_DECLARED",
-        "PERFORMANCE_FROZEN"
+        "ALTERNATIVE_ARRANGED",
+        "SERVICE_RESUMED",
+        "MAINTENANCE_LOGGED",
+        "USAGE_RECORDED",
+        "FEEDBACK_COLLECTED",
+        "EVIDENCE_SUBMITTED",
+        "PERFORMANCE_FROZEN",
+        "REVIEWER_ASSIGNED",
+        "REVIEW_DECIDED"
       ]
     },
     "aggregate_type": {
@@ -32,7 +50,13 @@
         "service_policy",
         "public_facility",
         "benefit_entitlement",
-        "performance_period"
+        "performance_period",
+        "transit_link",
+        "operating_contract",
+        "funding_ledger",
+        "usage_record",
+        "feedback_record",
+        "review_decision"
       ]
     },
     "aggregate_id": {
@@ -50,7 +74,56 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "event_payload": {
+      "type": "object"
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "x-event-aggregates": {
+    "POLICY_PUBLISHED": ["service_policy"],
+    "POLICY_VERSIONED": ["service_policy"],
+    "SERVICE_COMMITTED": ["service_policy"],
+    "CAPACITY_REPORTED": ["public_facility"],
+    "CONTRACT_AWARDED": ["operating_contract"],
+    "LINK_OPENED": ["transit_link"],
+    "LINK_CHANGED": ["transit_link"],
+    "BENEFIT_GRANTED": ["benefit_entitlement"],
+    "BENEFIT_REDEEMED": ["benefit_entitlement"],
+    "FUNDING_ALLOCATED": ["funding_ledger"],
+    "FUNDING_SETTLED": ["funding_ledger"],
+    "OUTAGE_DECLARED": ["public_facility", "transit_link"],
+    "ALTERNATIVE_ARRANGED": ["public_facility", "transit_link"],
+    "SERVICE_RESUMED": ["public_facility", "transit_link"],
+    "MAINTENANCE_LOGGED": ["public_facility"],
+    "USAGE_RECORDED": ["usage_record"],
+    "FEEDBACK_COLLECTED": ["feedback_record"],
+    "EVIDENCE_SUBMITTED": ["operating_contract"],
+    "PERFORMANCE_FROZEN": ["performance_period"],
+    "REVIEWER_ASSIGNED": ["performance_period"],
+    "REVIEW_DECIDED": ["review_decision"]
+  },
+  "x-payload-required": {
+    "POLICY_PUBLISHED": ["policy_code", "policy_version", "effective_from", "issuer"],
+    "POLICY_VERSIONED": ["policy_code", "policy_version", "supersedes_version", "effective_from"],
+    "SERVICE_COMMITTED": ["policy_code", "service_code", "service_name", "public_benefit_listed", "service_radius_km", "opening_schedule", "operator_id"],
+    "CAPACITY_REPORTED": ["facility_id", "total_capacity", "public_quota", "commercial_quota", "commercial_bookings", "as_of"],
+    "CONTRACT_AWARDED": ["contract_id", "operator_id", "service_codes", "period_start", "period_end", "purchase_amount"],
+    "LINK_OPENED": ["link_id", "mode", "service_codes", "accessible", "headway_minutes", "season"],
+    "LINK_CHANGED": ["link_id", "change_kind", "effective_from"],
+    "BENEFIT_GRANTED": ["benefit_code", "benefit_kind", "channel", "qualification_rule", "effective_from", "effective_to", "budget_source"],
+    "BENEFIT_REDEEMED": ["benefit_code", "redemption_id", "channel", "qualification_met", "occurred_on", "service_code", "dedup_key"],
+    "FUNDING_ALLOCATED": ["funding_id", "fiscal_period", "source", "amount", "service_code"],
+    "FUNDING_SETTLED": ["funding_id", "fiscal_period", "source", "amount", "service_code", "settled_on"],
+    "OUTAGE_DECLARED": ["outage_id", "affected_service_codes", "reason", "started_at", "emergency"],
+    "ALTERNATIVE_ARRANGED": ["outage_id", "affected_service_codes", "replacement_link_id", "started_at"],
+    "SERVICE_RESUMED": ["outage_id", "resumed_at", "restored_service_codes"],
+    "MAINTENANCE_LOGGED": ["maintenance_id", "facility_id", "work_kind", "scheduled_on", "status"],
+    "USAGE_RECORDED": ["period_id", "service_code", "season", "resident_visits", "tourist_visits", "quota_saturation"],
+    "FEEDBACK_COLLECTED": ["period_id", "service_code", "group", "satisfaction", "concern", "cell_count"],
+    "EVIDENCE_SUBMITTED": ["contract_id", "operator_id", "service_codes", "evidence_ids", "submitted_on"],
+    "PERFORMANCE_FROZEN": ["period_id", "frozen_at", "event_id_range", "dataset_hash"],
+    "REVIEWER_ASSIGNED": ["period_id", "reviewer_ids", "conflict_check"],
+    "REVIEW_DECIDED": ["period_id", "decision_id", "frozen_dataset_hash", "dimensions", "decision"]
+  }
 }

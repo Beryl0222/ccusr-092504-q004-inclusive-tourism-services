@@ -52,4 +52,34 @@ def validate_event(payload: Any, schema: Mapping[str, Any]) -> list[ContractIssu
         if isinstance(value, str) and allowed and value not in allowed:
             issues.append(ContractIssue(field, "unsupported_value", "字段值未在契约中登记"))
 
+    body = payload.get("event_payload")
+    if "event_payload" in payload and not isinstance(body, Mapping):
+        issues.append(ContractIssue("event_payload", "object_required", "业务载荷必须是 JSON 对象"))
+
+    event_type = payload.get("event_type")
+    aggregate_type = payload.get("aggregate_type")
+    pairings = schema.get("x-event-aggregates", {})
+    if isinstance(event_type, str) and isinstance(aggregate_type, str):
+        allowed_aggregates = pairings.get(event_type)
+        if isinstance(allowed_aggregates, list) and aggregate_type not in allowed_aggregates:
+            issues.append(
+                ContractIssue(
+                    "aggregate_type",
+                    "aggregate_mismatch",
+                    f"事件 {event_type} 不能挂在聚合 {aggregate_type} 上",
+                )
+            )
+
+    payload_required = schema.get("x-payload-required", {})
+    if isinstance(event_type, str) and isinstance(body, Mapping):
+        for field in payload_required.get(event_type, []):
+            if field not in body or body[field] in (None, ""):
+                issues.append(
+                    ContractIssue(
+                        f"event_payload.{field}",
+                        "payload_required",
+                        f"{event_type} 缺少业务字段 {field}",
+                    )
+                )
+
     return sorted(issues, key=lambda issue: (issue.field, issue.code))
